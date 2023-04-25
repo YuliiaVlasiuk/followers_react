@@ -45,8 +45,7 @@ export const Users = () => {
   }
 
   const handleChange = async (id, status) => {
-    
-    console.log(following)
+    console.log(following);
     setFollowing(prevState => {
       const newState = { ...prevState };
 

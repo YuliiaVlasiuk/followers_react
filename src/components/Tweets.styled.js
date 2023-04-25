@@ -64,7 +64,7 @@ text-transform: uppercase;
 color: #EBD8FF;
 `;
 
-export const Followers = styled.p`
+export const FollowersContainer = styled.p`
 text-align:center;
 padding-top: 16px;
 margin: 0;

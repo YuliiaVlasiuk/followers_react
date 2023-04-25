@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_05_movies=self.webpackChunkgoit_react_hw_05_movies||[]).push([[266],{266:function(e,t,n){n.r(t),n.d(t,{Home:function(){return c}});var r=n(184),c=function(){return(0,r.jsx)("main",{children:(0,r.jsx)("h3",{children:"Wellcome to our teams"})})};t.default=c}}]);
+//# sourceMappingURL=266.a154532b.chunk.js.map

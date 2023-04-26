@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { LoadMore, Card, BackBtn } from 'components/Tweets.styled';
-import axios from 'axios';
-import { TweetCard } from 'components/TweetCard';
 import { useLocation } from 'react-router-dom';
 
+import axios from 'axios';
 
-export const Users = () => {
+import { LoadMore, Card, BackBtn } from './Tweets.styled';
+import { TweetCard } from 'components/TweetCard/TweetCard';
+
+
+export const Tweets = () => {
   const [tweets, setTweets] = useState([]);
   const [buttonVisial, setButtonVisial] = useState(false);
   const [limit, setLimit] = useState(3);
@@ -37,8 +39,7 @@ export const Users = () => {
 
   return (
     <main>
-       {/* <BackLink to={backLinkHref}>Back to products</BackLink> */}
-      <BackBtn to={backToHome}>Back to home</BackBtn> 
+      <BackBtn to={backToHome}>Back to home</BackBtn>
 
       <Card>
         {tweets.map(tweet => (
@@ -55,4 +56,4 @@ export const Users = () => {
   );
 };
 
-export default Users;
+export default Tweets;

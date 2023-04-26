@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
-import { LoadMore, Card } from 'components/Tweets.styled';
+import { LoadMore, Card, BackBtn } from 'components/Tweets.styled';
 import axios from 'axios';
 import { TweetCard } from 'components/TweetCard';
+import { useLocation } from 'react-router-dom';
+
 
 export const Users = () => {
   const [tweets, setTweets] = useState([]);
   const [buttonVisial, setButtonVisial] = useState(false);
   const [limit, setLimit] = useState(3);
+
+  const location = useLocation();
+  const backToHome = location?.state?.from ?? "/";
 
   async function getTweets(limit) {
     try {
@@ -32,6 +37,8 @@ export const Users = () => {
 
   return (
     <main>
+      <BackBtn to={backToHome}>Back to home</BackBtn> 
+
       <Card>
         {tweets.map(tweet => (
           <TweetCard key={tweet.id} tweet={tweet} />

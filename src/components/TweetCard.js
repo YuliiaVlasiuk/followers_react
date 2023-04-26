@@ -16,9 +16,9 @@ import picture from '../images/picture.png';
 import logo from '../images/logo.png';
 
 const getInitialValue = id => {
-  const followData = JSON.parse(localStorage.getItem('followers'));
+  const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) && [];
 
-  if (followData && followData.includes(id)) {
+  if (arrayOfActiveFallowers.includes(id)) {
     return true;
   } else {
     return false;
@@ -35,35 +35,25 @@ export const TweetCard = ({ tweet }) => {
   const [status, setStatus] = useState(getInitialValue(tweet.id));
 
   const [followers, setFollowers] = useState(
-    getInitialFollovers(tweet.followers, status)
+     getInitialFollovers(tweet.followers, status)
   );
-
-  const formattedNumber = followers.toLocaleString();
-
-  console.log(followers);
 
   const handleChange = () => {
     setStatus(!status);
 
     if (!status) {
-      setFollowers(prev => prev + 1);
+      setFollowers(prevstate => prevstate + 1);
     } else {
-      setFollowers(prev => prev - 1);
+      setFollowers(prevstate => prevstate - 1);
     }
 
-    const userId = tweet.id;
-    const followData = JSON.parse(localStorage.getItem('followers'));
+    const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) && [];
 
-    if (followData) {
-      if (followData.includes(userId)) {
-        const filteredFollow = followData.filter(item => item !== userId);
-        localStorage.setItem(`followers`, JSON.stringify(filteredFollow));
-      } else
-        localStorage.setItem(
-          `followers`,
-          JSON.stringify([...followData, userId])
-        );
-    } else localStorage.setItem(`followers`, JSON.stringify([userId]));
+    const  filteredFollow = (arrayOfActiveFallowers.includes(tweet.id)) ? arrayOfActiveFallowers.filter(item => item !== tweet.id) : [...arrayOfActiveFallowers, tweet.id]     
+       
+    localStorage.setItem(`followers`, JSON.stringify(filteredFollow));
+
+
   };
   return (
     <UserLi>
@@ -72,7 +62,7 @@ export const TweetCard = ({ tweet }) => {
       <Line />
       <Avatar src={tweet.avatar} alt="avatar" />
       <Tweets>{tweet.tweets} tweets</Tweets>
-      <FollowersContainer>{formattedNumber} Followers</FollowersContainer>
+      <FollowersContainer>{followers.toLocaleString('en-US', { maximumFractionDigits: 0 })} Followers</FollowersContainer>
 
       <BtnContainer>
         {!status && (

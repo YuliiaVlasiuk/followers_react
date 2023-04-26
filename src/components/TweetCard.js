@@ -20,7 +20,7 @@ import logo from '../images/logo.png';
 export const TweetCard = ({ tweet }) => {
 
     const getInitialValue = id => {
-        const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) && [];
+        const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) ;
       
         if (arrayOfActiveFallowers && arrayOfActiveFallowers.includes(id)) {
           return true;

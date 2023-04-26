@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_05_movies=self.webpackChunkgoit_react_hw_05_movies||[]).push([[266],{266:function(e,s,o){o.r(s),o.d(s,{Home:function(){return t}});var r=o(184),t=function(){return(0,r.jsxs)("main",{children:[(0,r.jsx)("h3",{children:"Wellcome to our teams"}),(0,r.jsx)("img",{src:"https://wegeekgirls.files.wordpress.com/2014/12/we-love-our-followers.png",alt:"followers"})]})};s.default=t}}]);
+//# sourceMappingURL=266.f9c7b1e2.chunk.js.map

@@ -15,28 +15,40 @@ import { useState } from 'react';
 import picture from '../images/picture.png';
 import logo from '../images/logo.png';
 
-const getInitialValue = id => {
-  const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) && [];
 
-  if (arrayOfActiveFallowers && arrayOfActiveFallowers.includes(id)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const getInitialFollovers = (follovers, status) => {
-  if (status) {
-    return follovers + 1;
-  } else return follovers;
-};
 
 export const TweetCard = ({ tweet }) => {
+
+    const getInitialValue = id => {
+        const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) && [];
+      
+        if (arrayOfActiveFallowers && arrayOfActiveFallowers.includes(id)) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+
+
+
   const [status, setStatus] = useState(getInitialValue(tweet.id));
+
+
+  const getInitialFollovers = (follovers, status) => {
+    if (status) {
+      return follovers + 1;
+    } else return follovers;
+  };
+
+
 
   const [followers, setFollowers] = useState(
      getInitialFollovers(tweet.followers, status)
   );
+
+
+ 
+
 
   const handleChange = () => {
     setStatus(!status);

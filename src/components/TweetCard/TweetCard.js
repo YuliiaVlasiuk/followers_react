@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import {
   UserLi,
   Logos,
@@ -91,10 +91,10 @@ export const TweetCard = ({ tweet }) => {
   );
 };
 
-TweetCard.propTypes = {
-  id: PropTypes.string,
-  user: PropTypes.string,
-  avatar: PropTypes.string,
-  tweets: PropTypes.number,
-  followers: PropTypes.number,
-};
+// TweetCard.propTypes = {
+//   id: PropTypes.string,
+//   user: PropTypes.string,
+//   avatar: PropTypes.string,
+//   tweets: PropTypes.number,
+//   followers: PropTypes.number,
+// };

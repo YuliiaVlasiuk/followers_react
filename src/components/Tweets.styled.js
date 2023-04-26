@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Logos = styled.img`
 position:absolute;
@@ -138,9 +139,11 @@ margin-left: 480px;
 margin-bottom:50px; 
 `;
 
-export const BackBtn = styled.button`
+export const BackBtn = styled(NavLink)`
 width: 300px;
-background: #EBD8FF;
+color: white;
+text-decoration: none;
+
 box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
 border-radius: 10.3108px;
 font-family: 'Montserrat';
@@ -150,7 +153,8 @@ font-size: 18px;
 line-height: 22px;
 text-transform: uppercase;
 color: #373737;
-
+color: white;
+background-color: orangered;
 text-align: center;
 display: flex;
 justify-content: center;

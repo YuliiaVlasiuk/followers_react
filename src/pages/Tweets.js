@@ -11,7 +11,7 @@ export const Users = () => {
   const [limit, setLimit] = useState(3);
 
   const location = useLocation();
-  const backToHome = location?.state?.from ?? "/";
+  const backToHome = location.state?.from ?? '/';
 
   async function getTweets(limit) {
     try {
@@ -37,6 +37,7 @@ export const Users = () => {
 
   return (
     <main>
+       {/* <BackLink to={backLinkHref}>Back to products</BackLink> */}
       <BackBtn to={backToHome}>Back to home</BackBtn> 
 
       <Card>

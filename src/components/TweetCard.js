@@ -18,7 +18,7 @@ import logo from '../images/logo.png';
 const getInitialValue = id => {
   const arrayOfActiveFallowers = JSON.parse(localStorage.getItem('followers')) && [];
 
-  if (arrayOfActiveFallowers.includes(id)) {
+  if (arrayOfActiveFallowers && arrayOfActiveFallowers.includes(id)) {
     return true;
   } else {
     return false;
